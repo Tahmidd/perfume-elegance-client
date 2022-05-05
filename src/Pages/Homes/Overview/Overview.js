@@ -11,7 +11,7 @@ const Overview = () => {
                         <h1> <span>Welcome to the Elegance</span> <br /></h1>
                         <h1> <span className='text-pink'>Of Perfume</span> <br /></h1>
                         <p>Welcome to the world of fragrance where
-                            <br /> the sweet fragrance can take you to another world.
+                            <br /> the sweet fragrance can take you to another dimension.
                         </p>
 
 
