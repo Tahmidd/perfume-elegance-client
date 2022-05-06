@@ -83,9 +83,9 @@ const Login = () => {
                 </div>
             </Form>
 
-            <p className='mt-3'>New to the website? <Link to="/register" className='text-black pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p className='mt-3 text-center'>New to the website? <Link to="/register" className='text-black pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
 
-            <p className='mt-3'>Forgot your password? <button className='btn btn-link text-black text-decoration-none' onClick={resetPassword}>Click Reset</button> </p>
+            <p className='mt-3 text-center'>Forgot your password? <button className='btn btn-link text-black text-decoration-none' onClick={resetPassword}>Click Reset</button> </p>
 
             <ToastContainer />
         </div>
