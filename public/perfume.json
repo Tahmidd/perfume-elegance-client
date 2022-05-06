@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Yellow Perfume",
+        "description": "Beautiful yellow colored perfume to make your mood good",
+        "quantity": 30,
+        "seller": "tahmid",
+        "price": "300",
+        "img": "https://cdn.pixabay.com/photo/2019/04/06/19/22/glass-4108085_960_720.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Lavender Perfume",
+        "description": "Beautiful lavender flavoured perfume to make you feel good",
+        "quantity": 40,
+        "seller": "mahtab",
+        "price": "100",
+        "img": "https://cdn.pixabay.com/photo/2018/08/27/15/09/safe-3635196_960_720.jpg"
+    },
+    {
+        "id": 3,
+        "name": "OIL Perfume",
+        "description": "Beautiful oil perfume to make you feel elegant",
+        "quantity": 20,
+        "seller": "ratul",
+        "price": "150",
+        "img": "https://cdn.pixabay.com/photo/2015/08/25/03/50/basil-906137_960_720.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Vanilla Perfume",
+        "description": "Beautiful vanilla flavoured perfume to make your day become the best",
+        "quantity": 80,
+        "seller": "blake",
+        "price": "180",
+        "img": "https://cdn.pixabay.com/photo/2017/03/14/11/41/perfume-2142824_960_720.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Fruit Perfume",
+        "description": "Beautiful fruit flavoured perfume to make you smell best for the day",
+        "quantity": 60,
+        "seller": "sheldon",
+        "price": "100",
+        "img": "https://cdn.pixabay.com/photo/2016/11/22/22/49/essential-oils-1851027_960_720.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Coconut Perfume",
+        "description": "Beautiful coconut flavoured perfume to make your day become the best",
+        "quantity": 30,
+        "seller": "rock",
+        "price": "300",
+        "img": "https://cdn.pixabay.com/photo/2017/09/06/12/05/perfume-2721147_960_720.jpg"
+    }
+]
