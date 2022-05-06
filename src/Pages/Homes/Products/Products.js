@@ -10,7 +10,7 @@ const Products = () => {
     }, [])
 
     return (
-        <div id="product" className='container pt-3'>
+        <div id="inventory" className='container pt-3'>
             <h1 className='text-center text-pink'>Our Products</h1>
             <div className='row'>
                 {

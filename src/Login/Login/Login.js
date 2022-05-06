@@ -1,0 +1,95 @@
+import React, { useRef } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../firebase.init';
+import 'react-toastify/dist/ReactToastify.css';
+
+const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const location = useLocation();
+    let errorElement;
+
+    let from = location.state?.from?.pathname || "/";
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    const navigate = useNavigate();
+
+    if (loading) {
+
+    }
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
+
+    const navigateRegister = event => {
+        navigate('/register');
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('please enter your email address');
+        }
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password);
+    }
+    return (
+        <div className='container w-50 bg-border text-pink border rounded border-dark mt-3'>
+            <h1 className='text-pink text-center mt-3'>Please Login</h1>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                </Form.Group>
+
+                {errorElement}
+
+                <div className='d-flex justify-content-center'>
+                    <Button className='bg-pink border-0 w-75' type="submit">
+                        Login
+                    </Button>
+                </div>
+            </Form>
+
+            <p className='mt-3'>New to the website? <Link to="/register" className='text-black pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+
+            <p className='mt-3'>Forgot your password? <button className='btn btn-link text-black text-decoration-none' onClick={resetPassword}>Click Reset</button> </p>
+
+            <ToastContainer />
+        </div>
+    );
+};
+
+export default Login;

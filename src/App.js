@@ -4,6 +4,8 @@ import Header from './Shared/Header/Header';
 import Footer from './Shared/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
+import Login from './Login/Login/Login';
+import Register from './Login/Register/Register';
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
 
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/register' element={<Register></Register>}></Route>
 
         </Routes>
       </div>
