@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 import useInventoryDetail from '../hooks/useInventoryDetail'
 
 const InventoryDetail = () => {
@@ -17,6 +18,10 @@ const InventoryDetail = () => {
                         <p className="card-text"> Description: {inventory.description}</p>
                         <p className="card-text"> Quantity: {inventory.quantity}</p>
                         <p className="card-text"> Seller: {inventory.seller}</p>
+                        <div className=''>
+                            <Link to='/manage'><Button className='btn btn-pink border-0 my-5'>Manage Inventory</Button></Link>
+                        </div>
+
                     </div>
                 </div>
             </div>

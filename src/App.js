@@ -9,6 +9,7 @@ import Register from './Login/Register/Register';
 import RequireAuth from './Login/RequireAuth/RequireAuth'
 import InventoryDetail from './InventoryDetail/InventoryDetail';
 import ManageInventories from './ManageInventories/ManageInventories';
+import AddInventory from './AddInventory/AddInventory';
 
 
 function App() {
@@ -28,6 +29,11 @@ function App() {
           <Route path='/manage' element={
             <RequireAuth>
               <ManageInventories></ManageInventories>
+            </RequireAuth>
+          }></Route>
+          <Route path='/add' element={
+            <RequireAuth>
+              <AddInventory></AddInventory>
             </RequireAuth>
           }></Route>
           <Route path='/login' element={<Login></Login>}></Route>
