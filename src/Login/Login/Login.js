@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -26,7 +27,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     if (loading) {
-
+        return <Loading></Loading>
     }
 
     if (error) {
