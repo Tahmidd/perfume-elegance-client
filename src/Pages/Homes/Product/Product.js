@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ product }) => {
-    const { id, name, img, price, description, seller, quantity } = product;
+    const { _id, name, img, price, description, seller, quantity } = product;
     const navigate = useNavigate();
-    const navigateToServiceDetail = id => {
+    const navigateToInventoryDetail = id => {
         navigate(`/inventory/${id}`);
     }
     return (
@@ -19,7 +19,7 @@ const Product = ({ product }) => {
                     <p className="card-text"> Quantity: {quantity}</p>
                     <p className="card-text"> Seller: {seller}</p>
 
-                    <button onClick={() => navigateToServiceDetail(id)} className='btn btn-pink text-white'>Stock Update</button>
+                    <button onClick={() => navigateToInventoryDetail(_id)} className='btn btn-pink text-white'>Stock Update</button>
                 </div>
             </div>
         </div>

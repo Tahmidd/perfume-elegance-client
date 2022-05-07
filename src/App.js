@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Login from './Login/Login/Login';
 import Register from './Login/Register/Register';
+import RequireAuth from './Login/RequireAuth/RequireAuth'
+import InventoryDetail from './InventoryDetail/InventoryDetail';
 
 
 function App() {
@@ -17,6 +19,11 @@ function App() {
 
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/inventory/:inventoryId' element={
+            <RequireAuth>
+              <InventoryDetail></InventoryDetail>
+            </RequireAuth>
+          }></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
 
