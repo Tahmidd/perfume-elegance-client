@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -83,10 +84,10 @@ const Login = () => {
                 </div>
             </Form>
 
-            <p className='mt-3 text-center'>New to the website? <Link to="/register" className='text-black pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p className='mt-3 text-center text-black'>New to the website? <Link to="/register" className='text-pink pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
 
-            <p className='mt-3 text-center'>Forgot your password? <button className='btn btn-link text-black text-decoration-none' onClick={resetPassword}>Click Reset</button> </p>
-
+            <p className='mt-3 text-center text-black'>Forgot your password? <button className='btn btn-link text-pink text-decoration-none' onClick={resetPassword}>Click Reset</button> </p>
+            <GoogleLogin></GoogleLogin>
             <ToastContainer />
         </div>
     );

@@ -3,6 +3,7 @@ import { Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -84,7 +85,9 @@ const Register = () => {
             </Form>
 
 
-            <p className='mt-3 text-center'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none text-black' onClick={navigateLogin}>Please Login First</Link> </p>
+            <p className='mt-3 text-center text-black'>Already have an account? <Link to="/login" className='pe-auto text-decoration-none text-pink' onClick={navigateLogin}>Please Login First</Link> </p>
+
+            <GoogleLogin></GoogleLogin>
 
 
         </div>
