@@ -34,6 +34,7 @@ const Header = () => {
 
                                     <Nav.Link className='text-white' as={Link} to="manage">Manage Inventory</Nav.Link>
                                     <Nav.Link className='text-white' as={Link} to="add">Add Inventory</Nav.Link>
+                                    <Nav.Link className='text-white' as={Link} to="item">My Items</Nav.Link>
 
                                 </>
                             }
