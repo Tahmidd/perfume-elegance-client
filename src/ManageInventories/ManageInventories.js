@@ -5,6 +5,23 @@ import useInventories from '../hooks/useInventories'
 
 const ManageInventories = () => {
     const [inventories, setInventories] = useInventories();
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = inventories.filter(inventory => inventory._id !== id);
+                    setInventories(remaining);
+                })
+
+        }
+    }
     return (
         <div className='w-50 mx-auto'>
             <h1 className='text-center my-3 text-pink'>Manage Inventory</h1>
@@ -28,7 +45,7 @@ const ManageInventories = () => {
                                     <td>{inventory.name}</td>
                                     <td>{inventory.price}</td>
                                     <td>{inventory.seller}</td>
-                                    <td><p className='text-center mt-2'><Button className='btn btn-danger'>Delete</Button></p></td>
+                                    <td><p className='text-center mt-2'><Button onClick={() => handleDelete(inventory._id)} className='btn btn-danger'>Delete</Button></p></td>
                                 </tr>
 
                             </tbody>
