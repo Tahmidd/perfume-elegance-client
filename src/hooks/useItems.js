@@ -7,7 +7,7 @@ const useItems = () => {
     const [myItems, setMyItems] = useState([]);
     useEffect(() => {
         const email = user.email;
-        const url = `http://localhost:5000/item?email=${email}`;
+        const url = `https://morning-tundra-07720.herokuapp.com/item?email=${email}`;
         fetch(url, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -25,7 +25,7 @@ const InventoryDetail = () => {
             price: inventory.price
 
         }
-        axios.post('http://localhost:5000/item', item)
+        axios.post('https://morning-tundra-07720.herokuapp.com/item', item)
             .then(response => {
                 const { data } = response;
                 if (data.inserterId) {
@@ -44,7 +44,7 @@ const InventoryDetail = () => {
         const updatedUser = { quantity };
 
         // send data to the server
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://morning-tundra-07720.herokuapp.com/inventory/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
