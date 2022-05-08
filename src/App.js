@@ -11,6 +11,7 @@ import InventoryDetail from './InventoryDetail/InventoryDetail';
 import ManageInventories from './ManageInventories/ManageInventories';
 import AddInventory from './AddInventory/AddInventory';
 import MyItems from './Pages/MyItems/MyItems';
+import NotFound from './Shared/NotFound/NotFound'
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           }></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
-
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
       <Footer></Footer>

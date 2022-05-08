@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Table } from 'react-bootstrap';
-import useItems from '../../hooks/useItems'
+import useItems from '../../hooks/useItems';
+
 
 const MyItems = () => {
     const [myItems, setMyItems] = useItems();
@@ -28,8 +29,8 @@ const MyItems = () => {
                 myItems.map(myItem => <div key={myItem._id}
 
                 >
-                    <div className='container'>
-                        <Table className='' striped bordered hover>
+                    <div className='container table-responsive'>
+                        <Table className='table-responsive' striped bordered hover>
                             <tbody>
                                 <tr>
                                     <td>{myItem.inventory}</td>
