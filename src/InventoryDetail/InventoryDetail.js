@@ -34,6 +34,9 @@ const InventoryDetail = () => {
                 }
             });
 
+
+
+
         const quantity = parseInt(event.target.quantity.value) - 1;
 
 
@@ -55,7 +58,9 @@ const InventoryDetail = () => {
                 alert('changed successfully please reload');
 
             })
+
     }
+
     return (
         <div className='d-flex justify-content-center align-items-center mt-5 '>
 
@@ -81,8 +86,13 @@ const InventoryDetail = () => {
                     <br />
 
 
+
                     <input className='btn btn-pink text-white' type="submit" value="Deliver" />
+
+
                 </form>
+
+
 
                 <div className='d-flex justify-content-center'>
                     <Link to='/manage'><Button className='btn btn-pink border-0 my-5'>Manage Inventory</Button></Link>
