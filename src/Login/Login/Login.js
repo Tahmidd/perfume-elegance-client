@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import Loading from '../../Shared/Loading/Loading';
+import axios from 'axios';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -54,12 +55,14 @@ const Login = () => {
         }
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
     }
     return (
         <div className='container w-50 bg-border text-pink border rounded border-dark mt-3'>
