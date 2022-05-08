@@ -12,6 +12,7 @@ import ManageInventories from './ManageInventories/ManageInventories';
 import AddInventory from './AddInventory/AddInventory';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Shared/NotFound/NotFound'
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='/inventory/:inventoryId' element={
             <RequireAuth>
               <InventoryDetail></InventoryDetail>
