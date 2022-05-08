@@ -29,9 +29,31 @@ const InventoryDetail = () => {
             .then(response => {
                 const { data } = response;
                 if (data.inserterId) {
-                    toast('your order is booked');
+                    toast('delivery on the way');
                     event.target.reset();
                 }
+            });
+
+        const quantity = parseInt(event.target.quantity.value) - 1;
+
+
+
+        const updatedUser = { quantity };
+
+        // send data to the server
+        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('changed successfully please reload');
+
             })
     }
     return (
