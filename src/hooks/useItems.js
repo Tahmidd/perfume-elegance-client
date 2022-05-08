@@ -7,7 +7,12 @@ const useItems = () => {
     const [myItems, setMyItems] = useState([]);
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/item?email=${email}`)
+        const url = `http://localhost:5000/item?email=${email}`;
+        fetch(url, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setMyItems(data));
     }, []);

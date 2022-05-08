@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import useItems from '../../hooks/useItems';
 
 
 const MyItems = () => {
     const [myItems, setMyItems] = useItems();
+
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
